@@ -2,8 +2,8 @@
 
 error_reporting(0);
 
-$API_URL = 'localhost:3002';
-// $API_URL = '162.255.85.99:3001';
+// $API_URL = 'localhost:3002';
+$API_URL = '162.255.85.99:3001';
 // $IMAGE_PREFIX = 'http://www.curwinbusinesscentre.com/img/landing/';
 
 $PRIVILEGES = array(
