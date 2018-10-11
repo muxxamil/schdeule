@@ -17,15 +17,11 @@
 		<script src="vendor/moment/moment-timezone.js"></script>
 
 		<!-- Specific Page Vendor -->
-
-		<script src="vendor/jquery-ui/jquery-ui.js"></script>
-		<script src="vendor/jqueryui-touch-punch/jqueryui-touch-punch.js"></script>
-		<script src="vendor/fullcalendar/fullcalendar.js"></script>
-		<script src="vendor/jquery-validation/jquery.validate.js"></script>
-		<script src="js/examples/examples.validation.js"></script>
-		<script src="js/rentalLocationBooking.js"></script>
-		<script src="vendor/bootstrap-timepicker/bootstrap-timepicker.js"></script>
-
+<?php
+	if(!empty($pageSpecificJS)) {
+		echo $pageSpecificJS;
+	}
+?>
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
 
@@ -36,8 +32,10 @@
 		<script src="js/theme.init.js"></script>
 
 		<!-- Specific Page Vendor -->
-		
-		<script src="js/examples/examples.calendar.js"></script>
-
+<?php
+	if(!empty($pageSpecificPostJS)) {
+		echo $pageSpecificPostJS;
+	}
+?>		
 	</body>
 </html>

@@ -25,7 +25,13 @@
 	}
 
 	$pageTitle = (!empty($location_detail)) ? current($location_detail)->title : "";
-	$activeNav = (!empty($location_detail)) ? current($location_detail)->title : "";
+	$activeNav = "Calendar";
+
+	$pageSpecificCSS = '<link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.css" />
+		<link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.theme.css" />
+		<link rel="stylesheet" href="vendor/fullcalendar/fullcalendar.css" />
+		<link rel="stylesheet" href="vendor/fullcalendar/fullcalendar.print.css" media="print" />
+		<link rel="stylesheet" href="vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" />';
 	include('includes/header.php');
 ?>
 
@@ -157,6 +163,16 @@
 			</div>
 
 <?php
+
+$pageSpecificJS = '<script src="vendor/jquery-ui/jquery-ui.js"></script>
+					<script src="vendor/jqueryui-touch-punch/jqueryui-touch-punch.js"></script>
+					<script src="vendor/fullcalendar/fullcalendar.js"></script>
+					<script src="vendor/jquery-validation/jquery.validate.js"></script>
+					<script src="js/examples/examples.validation.js"></script>
+					<script src="js/rentalLocationBooking.js"></script>
+					<script src="vendor/bootstrap-timepicker/bootstrap-timepicker.js"></script>';
+
+$pageSpecificPostJS = '<script src="js/examples/examples.calendar.js"></script>';
 
 include_once('includes/footer.php');
 

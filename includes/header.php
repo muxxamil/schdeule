@@ -10,6 +10,10 @@ if(empty($_SESSION['ApiToken'])) {
 	header('Location: ../login.php');
 }
 
+if(!hasAccess($activeNav, $_SESSION['privileges'])) {
+	header('Location: '. getAcessibleNav($_SESSION['privileges']));
+}
+
 include_once('config/api_caller.php');
 include_once('controllers/RentalLocations.cls.php');
 
@@ -45,12 +49,6 @@ $rental_locations = (!empty($rental_locations['body']) && !empty($rental_locatio
 		<link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
 		<link rel="stylesheet" href="vendor/pnotify/pnotify.custom.css" />
 
-		<link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.css" />
-		<link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.theme.css" />
-		<link rel="stylesheet" href="vendor/fullcalendar/fullcalendar.css" />
-		<link rel="stylesheet" href="vendor/fullcalendar/fullcalendar.print.css" media="print" />
-		<link rel="stylesheet" href="vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" />
-
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css" />
 
@@ -61,7 +59,11 @@ $rental_locations = (!empty($rental_locations['body']) && !empty($rental_locatio
 		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Specific Page Vendor CSS -->
-
+<?php
+	if(!empty($pageSpecificCSS)) {
+		echo $pageSpecificCSS;
+	}
+?>
 		<!-- Head Libs -->
 		<script src="vendor/modernizr/modernizr.js"></script>
 
@@ -143,6 +145,31 @@ $rental_locations = (!empty($rental_locations['body']) && !empty($rental_locatio
 											<span>Dashboard</span>
 										</a>                        
 									</li>
+
+<?php
+									if(hasAccess('User', $_SESSION['privileges'])) {
+?>
+					                    <li class="nav-parent <?php echo ($activeNav == 'User') ? 'nav-active' : ''; ?>">
+					                        <a class="nav-link" href="usersList">
+					                            <i class="fas fa-users" aria-hidden="true"></i>
+					                            <span>Users</span>
+					                        </a>
+					                        <ul class="nav nav-children">
+					                            <li>
+					                                <a class="nav-link" href="usersList">
+					                                    Users List
+					                                </a>
+					                            </li>
+					                            <li>
+					                                <a class="nav-link" href="addUser">
+					                                    Add new User
+					                                </a>
+					                            </li>
+					                        </ul>
+					                    </li>
+<?php
+									}
+?>
 									
 <?php
 			foreach ($rental_locations as $key => $value) {
