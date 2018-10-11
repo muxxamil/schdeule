@@ -2,15 +2,6 @@
 
 include_once('../../../config/defaults.php');
 
-$normalHoursQuota 				= "-";
-$normalExtensionHoursQuota 		= 0;
-$peakHoursQuota 	  			= "-";
-$peakExtensionHoursQuota 	  	= 0;
-$boardroomHoursQuota 	  		= "-";
-$boardroomExtensionHoursQuota 	= 0;
-$offHoursQuota 	  				= "-";
-$offHoursExtensionQuota 	  	= 0;
-
 if(!empty($_POST['quota']['rows']['monthlyQuota'])) {
 	$monhlyData = $_POST['quota']['rows']['monthlyQuota'];
 }

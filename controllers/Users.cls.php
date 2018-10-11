@@ -50,6 +50,14 @@ class Users
 		$response = CallAPI('POST', 'users', "$params[userId]/quotaExtension", $params);
 		return $response;
 	}
+
+	function get_designation_default_quota($params) 
+	{
+		global $API_URL;
+
+		$response = CallAPI('GET', 'userDesignations', "$params[id]/defaultQuota", $params);
+		return $response;
+	}
 }
 
 ?>
