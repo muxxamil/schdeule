@@ -47,6 +47,9 @@
 
 					<!-- start: page -->
 					<section class="card">
+						<header class="card-header">
+							<h2 class="card-title"><?php echo $location_detail->title; ?></h2>
+						</header>
 						<div class="card-body">
 							<div class="row">
 								<div class="col-lg-12">
