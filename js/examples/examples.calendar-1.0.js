@@ -134,7 +134,30 @@ async function getLatestEvents() {
 			{ 
 				return callback(await getLatestEvents());
 			},
+			dayRender: function(date, cell){
+				var currentDate = new Date();
+				var maxDate = new Date();
+				maxDate.setDate(currentDate.getDate() + 14);
+
+		        if (date > maxDate){
+		            $(cell).addClass('disabled');
+		        }
+		    },
 			dayClick: function(date, jsEvent, view, resourceObj) {
+				
+				var currentDate = new Date();
+				var maxDate = new Date();
+				maxDate.setDate(currentDate.getDate() + 14);
+
+		        if (date > maxDate){
+		            new PNotify({
+						title: 'Error!',
+						text: `You cannot Schedule after ${moment(maxDate).format('DD-MM-YYYY')}, Please Contact Support for this.`,
+						type: 'error'
+					});
+					return;
+		        }
+
 				if(date.diff(moment().format('YYYY-MM-DD')) >= 0) {
 					$('#bookedSlots').html('');
 					$('#staffedHours').html('');

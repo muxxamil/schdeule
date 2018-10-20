@@ -172,7 +172,7 @@ $pageSpecificJS = '<script src="vendor/jquery-ui/jquery-ui.js"></script>
 					<script src="js/rentalLocationBooking.js"></script>
 					<script src="vendor/bootstrap-timepicker/bootstrap-timepicker.js"></script>';
 
-$pageSpecificPostJS = '<script src="js/examples/examples.calendar.js"></script>';
+$pageSpecificPostJS = '<script src="js/examples/examples.calendar-1.0.js"></script>';
 
 include_once('includes/footer.php');
 
