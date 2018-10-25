@@ -4,8 +4,8 @@ $normalHours 	= 0;
 $boardroomHours = 0;
 $unstaffedHours = 0;
 
-if(!empty($_POST['data'])) {
-	$data 			= current($_POST['data']);
+if(!empty($_POST['data']['weeklyQuota'])) {
+	$data 			= $_POST['data']['weeklyQuota'];
 	$normalHours 	= $data['normalHours'];
 	$boardroomHours = $data['boardroomHours'];
 	$unstaffedHours = $data['unStaffedHours'];
