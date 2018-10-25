@@ -91,6 +91,10 @@
 							</div>
 						</div>
 					</div>
+
+				<div id="upcomingBookings">
+					
+				</div>
 <?php
 			}
 ?>
@@ -100,6 +104,6 @@
 $pageSpecificJS = '<script src="vendor/liquid-meter/liquid.meter.js"></script>
 				   <script src="vendor/snap.svg/snap.svg.js"></script>';
 
-$pageSpecificPostJS = '<script src="js/examples/examples.dashboard.js"></script>';
+$pageSpecificPostJS = '<script src="js/examples/examples.dashboard-1.0.js"></script>';
 	include('includes/footer.php');
 ?>
