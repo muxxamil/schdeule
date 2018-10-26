@@ -22,17 +22,17 @@ if(!empty($_POST['data']['weeklyQuota'])) {
 			<div class="form-group row">
 				<div class="col-lg-4">
 					<label class="control-label text-lg-right pt-2" for="normalHours">Normal </label>
-					<input type="number" min=0 name = "normalHours" class="form-control" id="normalHours" value="<?php echo $normalHours; ?>" required step="0.1">
+					<input type="number" name = "normalHours" class="form-control" id="normalHours" value="<?php echo $normalHours; ?>" required step="0.1">
 				</div>
 
 				<div class="col-lg-4">
 					<label class="control-label text-lg-right pt-2" for="boardroomHours">Boardroom </label>
-					<input type="number" min=0 name = "boardroomHours" class="form-control" id="boardroomHours" value="<?php echo $boardroomHours; ?>" required step="0.1">
+					<input type="number" name = "boardroomHours" class="form-control" id="boardroomHours" value="<?php echo $boardroomHours; ?>" required step="0.1">
 				</div>
 
 				<div class="col-lg-4">
 					<label class="control-label text-lg-right pt-2" for="unStaffedHours">UnStaffed </label>
-					<input type="number" min=0 name = "unStaffedHours" class="form-control" id="unStaffedHours" value="<?php echo $unstaffedHours; ?>" required step="0.1">
+					<input type="number" name = "unStaffedHours" class="form-control" id="unStaffedHours" value="<?php echo $unstaffedHours; ?>" required step="0.1">
 				</div>
 
 			</div>
