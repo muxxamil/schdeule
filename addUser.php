@@ -127,7 +127,7 @@
 	$pageSpecificJS = '<script src="vendor/ios7-switch/ios7-switch.js"></script>
 					   <script src="vendor/jquery-validation/jquery.validate.js"></script>
 					   <script src="js/examples/examples.validation.js"></script>
-					   <script src="js/forms/add-edit-user.js"></script>
+					   <script src="js/forms/add-edit-user-1.0.js"></script>
 					   ';
 	include('includes/footer.php');
 ?>

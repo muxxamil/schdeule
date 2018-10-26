@@ -32,5 +32,5 @@
 	</div>
 </section>
 
-<script src="js/forms/add-edit-user.js"></script>
+<script src="js/forms/add-edit-user-1.0.js"></script>
 

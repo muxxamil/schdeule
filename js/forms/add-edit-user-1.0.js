@@ -184,7 +184,7 @@ $('.extra-hours-quota-form').each(function(){
 			    requestData[obj.name] = obj.value;
 			});
 
-			if(requestData.normalHours == 0 && requestData.boardroomHours == 0 && requestData.unStaffedHours == 0) {
+			/*if(requestData.normalHours == 0 && requestData.boardroomHours == 0 && requestData.unStaffedHours == 0) {
 				new PNotify({
 					title: 'Error!',
 					text: "Atleast one extension is required for submission.",
@@ -192,7 +192,7 @@ $('.extra-hours-quota-form').each(function(){
 				});
 
 				return;
-			}
+			}*/
 
 			// Ajax Submit
 			$.ajax({
