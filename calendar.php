@@ -48,6 +48,7 @@
 	$location_detail = current($location_detail);
 
 ?>
+					<p class="text-danger">Note: All times are according to 'America/Halifax' Timezone</p>
 					<div class="row" id="availableQuota">
 					</div>
 
@@ -73,6 +74,7 @@
 								<h2 class="card-title"></h2>
 							</header>
 							<div class="card-body">
+								<p class="text-danger">Note: All times are according to 'America/Halifax' Timezone</p>
 								<form class="booking-schedule-form" action = "controllers/ajax/book_location.php" method="post">
 									<input type="hidden" name="bookingForDate" id="bookingForDate" value=""/>
 <?php
@@ -169,10 +171,10 @@ $pageSpecificJS = '<script src="vendor/jquery-ui/jquery-ui.js"></script>
 					<script src="vendor/fullcalendar/fullcalendar.js"></script>
 					<script src="vendor/jquery-validation/jquery.validate.js"></script>
 					<script src="js/examples/examples.validation.js"></script>
-					<script src="js/rentalLocationBooking.js"></script>
+					<script src="js/rentalLocationBooking-1.1.js"></script>
 					<script src="vendor/bootstrap-timepicker/bootstrap-timepicker.js"></script>';
 
-$pageSpecificPostJS = '<script src="js/examples/examples.calendar-1.0.js"></script>';
+$pageSpecificPostJS = '<script src="js/examples/examples.calendar-1.1.js"></script>';
 
 include_once('includes/footer.php');
 

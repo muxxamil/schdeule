@@ -33,13 +33,12 @@ async function getLatestEvents() {
 			if(data.body.rows && data.body.rows.length) {
 				for (var i = data.body.rows.length - 1; i >= 0; i--) {
 					let tempObj = data.body.rows[i];
-					var dateFrom = new Date(tempObj.from);
-					var dateTo = new Date(tempObj.from);
-					tempObj.start = moment(tempObj.from).format('YYYY-MM-DD')
-					tempObj.start = new Date(dateFrom.getFullYear(), dateFrom.getMonth(), dateFrom.getDate(), moment(tempObj.from).format('HH'), moment(tempObj.from).format('mm'));
-					tempObj.end = new Date(dateTo.getFullYear(), dateTo.getMonth(), dateTo.getDate(), moment(tempObj.to).format('HH'), moment(tempObj.to).format('mm'));
-					tempObj.from = moment(tempObj.from).format('hh:mm A')
-					tempObj.to = moment(tempObj.to).format('hh:mm A')
+					var dateFrom = new Date(moment.tz(tempObj.from, 'America/Halifax').format('YYYY-MM-DD HH:mm:ss'));
+					var dateTo = new Date(moment.tz(tempObj.to, 'America/Halifax').format('YYYY-MM-DD HH:mm:ss'));
+					tempObj.start = new Date(dateFrom.getFullYear(), dateFrom.getMonth(), dateFrom.getDate(), moment.tz(tempObj.from, 'America/Halifax').format('HH'), moment.tz(tempObj.from, 'America/Halifax').format('mm'));
+					tempObj.end = new Date(dateTo.getFullYear(), dateTo.getMonth(), dateTo.getDate(), moment.tz(tempObj.to, 'America/Halifax').format('HH'), moment.tz(tempObj.to, 'America/Halifax').format('mm'));
+					tempObj.from = moment.tz(tempObj.from, 'America/Halifax').format('hh:mm A')
+					tempObj.to = moment.tz(tempObj.to, 'America/Halifax').format('hh:mm A')
 					eventsArr.push(tempObj);
 				}
 			}

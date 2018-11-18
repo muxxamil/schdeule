@@ -77,8 +77,8 @@ function showOfficeLocationBookings(officeLocationId, from, to) {
 			    if(data && data.status == 200) {
 			    	if(data && data.body && data.body.length) {
 			    		for (var i = 0; i < data.body.length; i++) {
-						    data.body[i].from = moment(data.body[i].from).format('YYYY-MM-DD HH:mm:ss');
-						    data.body[i].to = moment(data.body[i].to).format('YYYY-MM-DD HH:mm:ss');
+			    			data.body[i].from = moment.tz(data.body[i].from, 'America/Halifax').format('YYYY-MM-DD HH:mm:ss');
+			    			data.body[i].to = moment.tz(data.body[i].to, 'America/Halifax').format('YYYY-MM-DD HH:mm:ss');
 						}
 			    	}
 			    	loadBookedSlots((data && data.body) ? data.body : []);
@@ -94,8 +94,6 @@ function showOfficeLocationBookings(officeLocationId, from, to) {
 
 function loadStaffedHours(data, date) {
 	if(data) {
-		data.to = moment.tz(data.to, 'YYYY-MM-DD HH:mm:ss', 'America/Halifax').local().format('YYYY-MM-DD HH:mm:ss');
-		data.from = moment.tz(data.from, 'YYYY-MM-DD HH:mm:ss', 'America/Halifax').local().format('YYYY-MM-DD HH:mm:ss');
 		$.ajax({
 		    url: 'controllers/ajax/tpl/staffedHours.tpl.php',
 		    type: 'POST',
@@ -141,8 +139,11 @@ $('.booking-schedule-form').each(function(){
 			    requestData[obj.name] = obj.value;
 			});
 
-			requestData.from = moment.utc(moment(requestData.bookingForDate + " " + requestData.timeFrom, "YYYY-MM-DD h:mm:ss A")).valueOf();
-			requestData.to = moment.utc(moment(requestData.bookingForDate + " " + requestData.timeTo, "YYYY-MM-DD h:mm:ss A")).valueOf();
+			requestData.timeFrom = moment.tz(requestData.timeFrom, 'h:mm A', 'America/Halifax').format('h:mm A');
+			requestData.timeTo = moment.tz(requestData.timeTo, 'h:mm A', 'America/Halifax').format('h:mm A');
+
+			requestData.from = moment.tz(requestData.bookingForDate + " " + requestData.timeFrom, "YYYY-MM-DD h:mm:ss A", 'America/Halifax').utc().valueOf();
+			requestData.to = moment.tz(requestData.bookingForDate + " " + requestData.timeTo, "YYYY-MM-DD h:mm:ss A", 'America/Halifax').utc().valueOf();
 			// requestData.bookingForDate = moment(requestData.bookingForDate, "YYYY-MM-DD");
 			requestData.timezone = moment.tz.guess();
 			// Ajax Submit
