@@ -40,9 +40,9 @@ async function getLatestEvents() {
 					let tempObj = data.body.rows[i];
 					var dateFrom = new Date(tempObj.from);
 					var dateTo = new Date(tempObj.from);
-					tempObj.date = moment(tempObj.from).format('DD-MM-YYYY')
-					tempObj.from = moment(tempObj.from).format('hh:mm A')
-					tempObj.to = moment(tempObj.to).format('hh:mm A')
+					tempObj.date = moment.tz(tempObj.from, 'America/Halifax').format('DD-MM-YYYY')
+					tempObj.from = moment.tz(tempObj.from, 'America/Halifax').format('hh:mm A')
+					tempObj.to = moment.tz(tempObj.to, 'America/Halifax').format('hh:mm A')
 					eventsArr.push(tempObj);
 				}
 

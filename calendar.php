@@ -48,7 +48,7 @@
 	$location_detail = current($location_detail);
 
 ?>
-					<p class="text-danger">Note: All times are according to 'America/Halifax' Timezone</p>
+					<p class="text-danger">Note: All times are according to 'Atlantic' Timezone</p>
 					<div class="row" id="availableQuota">
 					</div>
 
@@ -74,7 +74,7 @@
 								<h2 class="card-title"></h2>
 							</header>
 							<div class="card-body">
-								<p class="text-danger">Note: All times are according to 'America/Halifax' Timezone</p>
+								<p class="text-danger">Note: All times are according to 'Atlantic' Timezone</p>
 								<form class="booking-schedule-form" action = "controllers/ajax/book_location.php" method="post">
 									<input type="hidden" name="bookingForDate" id="bookingForDate" value=""/>
 <?php
