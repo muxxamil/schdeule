@@ -15,9 +15,9 @@
 		    session_start();
 		}
 
-		$_SESSION['ApiToken'] = $response['body']->token;
-		$_SESSION['userInfo'] = $response['body']->userInfo;
-		$_SESSION['privileges'] = $response['body']->userInfo->privileges;
+		$_SESSION['scheduleApiToken'] = $response['body']->token;
+		$_SESSION['scheduleUserInfo'] = $response['body']->userInfo;
+		$_SESSION['schedulePrivileges'] = $response['body']->userInfo->privileges;
 	}
 
 	echo json_encode($response);

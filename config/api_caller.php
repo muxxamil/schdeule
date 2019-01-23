@@ -45,7 +45,7 @@ function CallAPI($method, $controller, $action = '', $data = [], $pass_token = t
    }
 
    if($pass_token) {
-      $authorization = "token: " . $_SESSION['ApiToken'];
+      $authorization = "token: " . $_SESSION['scheduleApiToken'];
    }
 
    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
@@ -60,7 +60,7 @@ function CallAPI($method, $controller, $action = '', $data = [], $pass_token = t
    $info = curl_getinfo($curl);
 
    if($info["http_code"] == 401) {
-      unset($_SESSION['ApiToken']);
+      unset($_SESSION['scheduleApiToken']);
       session_destroy();
    }
 	return array(

@@ -6,12 +6,12 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if(empty($_SESSION['ApiToken'])) {
+if(empty($_SESSION['scheduleApiToken'])) {
 	header('Location: ../login.php');
 }
 
-if(!hasAccess($activeNav, $_SESSION['privileges'])) {
-	header('Location: '. getAcessibleNav($_SESSION['privileges']));
+if(!hasAccess($activeNav, $_SESSION['schedulePrivileges'])) {
+	header('Location: '. getAcessibleNav($_SESSION['schedulePrivileges']));
 }
 
 include_once('config/api_caller.php');
@@ -93,8 +93,8 @@ $rental_locations = (!empty($rental_locations['body']) && !empty($rental_locatio
 								<img src="img/!logged-user.jpg" alt="Joseph Doe" class="rounded-circle" data-lock-picture="img/!logged-user.jpg" />
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name"><?php echo $_SESSION['userInfo']->firstName; ?></span>
-								<span class="role">Designation: <?php echo $_SESSION['userInfo']->UserDesignation->title; ?></span>
+								<span class="name"><?php echo $_SESSION['scheduleUserInfo']->firstName; ?></span>
+								<span class="role">Designation: <?php echo $_SESSION['scheduleUserInfo']->UserDesignation->title; ?></span>
 							</div>
 			
 							<i class="fa custom-caret"></i>
@@ -147,7 +147,7 @@ $rental_locations = (!empty($rental_locations['body']) && !empty($rental_locatio
 									</li>
 
 <?php
-									if(hasAccess('User', $_SESSION['privileges'])) {
+									if(hasAccess('User', $_SESSION['schedulePrivileges'])) {
 ?>
 					                    <li class="nav-parent <?php echo ($activeNav == 'User') ? 'nav-active' : ''; ?>">
 					                        <a class="nav-link" href="usersList">

@@ -6,8 +6,9 @@
 	    session_start();
 	}
 
-	unset($_SESSION['ApiToken']);
-	unset($_SESSION['userInfo']);
+	unset($_SESSION['scheduleApiToken']);
+	unset($_SESSION['scheduleUserInfo']);
+	unset($_SESSION['schedulePrivileges']);
 	session_destroy();
 
 	echo true;

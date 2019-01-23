@@ -9,7 +9,7 @@
 	}
 
 	if(!empty($_GET['onlyLoggedInUser']) && $_GET['onlyLoggedInUser'] == true) {
-		$_GET['id'] = $_SESSION['userInfo']->id;
+		$_GET['id'] = $_SESSION['scheduleUserInfo']->id;
 	}
 
 	echo json_encode(Users::get_user_quota($_GET));
