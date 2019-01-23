@@ -1,5 +1,5 @@
 <?php
-
+header('Location: ./dashboard.php');
 	$pageTitle = "User";
 	$activeNav = "User";
 	$pageSpecificCSS = '<link rel="stylesheet" href="vendor/select2/css/select2.css" />

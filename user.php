@@ -1,4 +1,5 @@
 <?php
+header('Location: ./dashboard.php');
 
 	$pageTitle = "User";
 	$activeNav = "User";
