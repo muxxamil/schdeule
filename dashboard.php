@@ -24,8 +24,8 @@
 	    session_start();
 	}
 
-	$userQuota = Users::get_user_quota(array('id' => $_SESSION['userInfo']->id));
-	$designationQuota = Users::get_designation_default_quota(array('id' => $_SESSION['userInfo']->designationId));
+	$userQuota = Users::get_user_quota(array('id' => $_SESSION['scheduleUserInfo']->id));
+	$designationQuota = Users::get_designation_default_quota(array('id' => $_SESSION['scheduleUserInfo']->designationId));
 
 	$weeklyData = [];
 

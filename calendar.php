@@ -19,7 +19,7 @@
 
 	$showUserDropdown = false;
 
-	if(in_array($PRIVILEGES['CAN_BOOK_LOCATION_FOR_ALL_USERS'], $_SESSION['privileges'])) {
+	if(in_array($PRIVILEGES['CAN_BOOK_LOCATION_FOR_ALL_USERS'], $_SESSION['schedulePrivileges'])) {
 		$showUserDropdown = true;
 		$user_list 	= Users::get_users();
 	}

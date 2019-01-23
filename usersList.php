@@ -55,7 +55,7 @@
 													<td class="actions">
 														<a href="user.php?id=<?php echo $value->id; ?>" target = "blank" class="on-default"><i class="fas fa-pencil-alt"></i></a>
 <?php
-														if(in_array($PRIVILEGES['CAN_RESET_ALL_PASSWORD'], $_SESSION['privileges']) || ($value->id == $_SESSION['userInfo']->id && in_array($PRIVILEGES['CAN_RESET_MY_PASSWORD'], $_SESSION['privileges'])))
+														if(in_array($PRIVILEGES['CAN_RESET_ALL_PASSWORD'], $_SESSION['schedulePrivileges']) || ($value->id == $_SESSION['scheduleUserInfo']->id && in_array($PRIVILEGES['CAN_RESET_MY_PASSWORD'], $_SESSION['schedulePrivileges'])))
 														{
 ?>
 															<a onclick="return openResetPasswordModal(<?php echo $value->id; ?>)" class="on-default"><i class="fas fa-key"></i></a>
@@ -63,7 +63,7 @@
 														}
 ?>
 <?php
-														if(in_array($PRIVILEGES['CAN_CHANGE_ALL_USER_QUOTA'], $_SESSION['privileges']))
+														if(in_array($PRIVILEGES['CAN_CHANGE_ALL_USER_QUOTA'], $_SESSION['schedulePrivileges']))
 														{
 ?>
 															<a onclick="return openQuotaManagementModal(<?php echo $value->id; ?>)" class="on-default"><i class="fas fa-clock"></i></a>

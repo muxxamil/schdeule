@@ -19,7 +19,7 @@
 					<tr>
 						<th>Location</th>
 <?php
-						if(in_array($PRIVILEGES['CAN_CHANGE_ALL_USER_QUOTA'], $_SESSION['privileges']))
+						if(in_array($PRIVILEGES['CAN_CHANGE_ALL_USER_QUOTA'], $_SESSION['schedulePrivileges']))
 						{
 ?>
 							<th>Booked For</th>
@@ -38,7 +38,7 @@
 						<tr>
 							<td><?php echo $value['title'] ?></td>
 <?php
-						if(in_array($PRIVILEGES['CAN_CHANGE_ALL_USER_QUOTA'], $_SESSION['privileges']))
+						if(in_array($PRIVILEGES['CAN_CHANGE_ALL_USER_QUOTA'], $_SESSION['schedulePrivileges']))
 						{
 ?>
 							<th><?php echo $value['by']; ?></th>
