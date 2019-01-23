@@ -147,7 +147,7 @@ $rental_locations = (!empty($rental_locations['body']) && !empty($rental_locatio
 									</li>
 
 <?php
-									if(hasAccess('User', $_SESSION['schedulePrivileges'])) {
+									/*if(hasAccess('User', $_SESSION['schedulePrivileges'])) {
 ?>
 					                    <li class="nav-parent <?php echo ($activeNav == 'User') ? 'nav-active' : ''; ?>">
 					                        <a class="nav-link" href="usersList">
@@ -168,7 +168,7 @@ $rental_locations = (!empty($rental_locations['body']) && !empty($rental_locatio
 					                        </ul>
 					                    </li>
 <?php
-									}
+									}*/
 ?>
 									
 <?php
